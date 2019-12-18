@@ -14,7 +14,7 @@ public class PersonController {
 
     @PostMapping("/addperson")
     public void addPerson(@RequestBody Person person){
-
+        personService.addPerson(person);
     }
 
     @GetMapping("/getpersonlist")
@@ -24,11 +24,11 @@ public class PersonController {
 
     @PostMapping("/updateperson")
     public void updatePerson(@RequestBody Person person){
-
+        personService.updatePerson(person);
     }
 
     @GetMapping("/deleteperson/{id}")
-    public int deletePerson(@PathVariable("id") int id) {
-        return 0;
+    public void deletePerson(@PathVariable("id") int id) {
+        personService.deletePerson(id);
     }
 }

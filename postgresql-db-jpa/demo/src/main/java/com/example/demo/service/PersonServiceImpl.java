@@ -14,8 +14,9 @@ public class PersonServiceImpl implements PersonService {
     @Autowired
     PersonRepository personRepository;
 
-    public int addPerson(Person person) {
-        return 0;
+    public void addPerson(Person person) {
+        person.setId(Math.toIntExact(personRepository.count() + 1));
+        personRepository.save(person);
     }
 
     public List<Person> getPersonList() {
@@ -24,11 +25,13 @@ public class PersonServiceImpl implements PersonService {
         return personList;
     }
 
-    public int updatePerson(Person person) {
-        return 0;
+    public void updatePerson(Person person) {
+        Person currentPerson = personRepository.findById(person.getId()).get();
+        currentPerson.setName(person.getName());
+        personRepository.save(currentPerson);
     }
 
-    public int deletePerson(int id) {
-        return 0;
+    public void deletePerson(int id) {
+        personRepository.deleteById(id);
     }
 }

@@ -6,12 +6,12 @@ import java.util.List;
 
 public interface PersonService {
 
-    int addPerson(Person person);
+    void addPerson(Person person);
 
     List<Person> getPersonList();
 
-    int updatePerson(Person person);
+    void updatePerson(Person person);
 
-    int deletePerson(int id);
+    void deletePerson(int id);
 
 }
