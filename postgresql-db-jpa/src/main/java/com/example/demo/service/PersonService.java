@@ -14,4 +14,9 @@ public interface PersonService {
 
     void deletePerson(int id);
 
+    void activatePerson(int id);
+
+    void deActivatePerson(int id);
+
+    List<Person> getActivePersonList();
 }

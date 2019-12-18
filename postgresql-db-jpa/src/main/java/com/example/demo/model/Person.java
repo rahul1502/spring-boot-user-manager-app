@@ -8,6 +8,7 @@ public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private int activation;
 
     private String name;
 
@@ -25,5 +26,13 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int getActivation() {
+        return activation;
+    }
+
+    public void setActivation(int activation) {
+        this.activation = activation;
     }
 }

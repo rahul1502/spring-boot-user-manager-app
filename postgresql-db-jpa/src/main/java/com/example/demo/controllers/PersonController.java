@@ -31,4 +31,21 @@ public class PersonController {
     public void deletePerson(@PathVariable("id") int id) {
         personService.deletePerson(id);
     }
+
+    // activation related controllers
+
+    @GetMapping("/activateperson/{id}")
+    public void activatePerson(@PathVariable("id") int id) {
+        personService.activatePerson(id);
+    }
+
+    @GetMapping("/deactivateperson/{id}")
+    public void deActivatePerson(@PathVariable("id") int id) {
+        personService.deActivatePerson(id);
+    }
+
+    @GetMapping("/getactivepersonlist")
+    public List<Person> getActivePersonList() {
+        return personService.getActivePersonList();
+    }
 }
